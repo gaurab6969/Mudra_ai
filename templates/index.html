@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Upload</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <div class="text-center w-full max-w-lg">
+      <!-- File upload area -->
+      <div class="flex items-center justify-center w-full mb-4">
+        <label
+          for="dropzone-file"
+          class="flex flex-col items-center justify-center w-full h-64 border-2 border-blue-300 border-dashed rounded-lg cursor-pointer bg-blue-50 hover:bg-blue-100 dark:hover:bg-gray-800 dark:bg-gray-700 hover:border-blue-500"
+        >
+          <div class="flex flex-col items-center justify-center pt-5 pb-6">
+            <svg
+              class="w-10 h-10 mb-4 text-blue-600 dark:text-blue-600"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 20 16"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+              />
+            </svg>
+            <p
+              class="mb-2 text-sm md:text-2xl text-gray-500 dark:text-gray-400"
+            >
+              <span class="font-semibold">Click to upload</span> or
+              <strong class="text-blue-600"> drag</strong> and
+              <strong class="text-blue-600"> drop</strong>
+            </p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+              SVG, PNG, JPG or GIF (MAX SIZE: 100 MB)
+            </p>
+          </div>
+          <input id="dropzone-file" type="file" class="hidden" accept="image/*">
+        </label>
+      </div>
+
+      <!-- Error message -->
+      <div id="error-msg" class="text-red-500 mb-4 hidden"></div>
+
+      <!-- File preview -->
+      <div id="file-preview" class="mt-4"></div>
+
+      <!-- Progress bar -->
+      <div id="progress-bar" class="hidden mt-4">
+        <div class="relative pt-1">
+          <div class="flex mb-2 items-center justify-between">
+            <div>
+              <span
+                class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600 bg-teal-200"
+              >
+                Progress
+              </span>
+            </div>
+            <div class="text-right">
+              <span
+                class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600 bg-teal-200"
+                id="progress-text"
+              >
+                0%
+              </span>
+            </div>
+          </div>
+          <div class="flex mb-2 items-center justify-between">
+            <div class="w-full bg-gray-200 rounded-full">
+              <!-- This is where the blue color will fill -->
+              <div
+                id="progress-bar-inner"
+                class="bg-blue-600 text-xs leading-none py-1 text-center text-teal-100 rounded-full"
+                style="width: 0%"
+              >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upload button -->
+      <button
+        id="upload-btn"
+        class="p-2 bg-blue-600 text-white w-[30%] rounded-full mt-5 disabled:bg-gray-500"
+        disabled
+      >
+        Upload
+      </button>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
