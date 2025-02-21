@@ -17,7 +17,7 @@ class SVM(nn.Module):
 
 # Define categories
 Categories = ['alopodmo', 'ankush', 'ardhachandra', 'bhramar', 'chatur', 
-              'ghronik', 'hongshashyo', 'kangul', 'khotkamukh', 'kodombo', 'kopitho']
+              'ghronik', 'hongshashyo', 'kangul', 'khotkamukh', 'kodombo', 'kopitho', 'kortorimukho', 'krishnaxarmukh', 'mrigoshirsho', 'mukul']
 
 # Load the model
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
